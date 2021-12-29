@@ -55,15 +55,15 @@
         <aside id="sidebar-wrapper">
             <div class="sidebar-brand">
                 <a href="<?= base_url('master-admin') ?>" class="logo d-flex align-items-center justify-content-center">
-                    <!-- <img src="<?= base_url('assets/img/logo.png') ?>" alt=""> -->
-                    <span><?= $data['nama_website'] ?></span>
+                    <img src="<?= base_url('assets/vasilissa/website/' . $data['logo_icon']) ?>" width="30" alt="">
+                    &nbsp;<span><?= $data['nama_website'] ?> Master</span>
                 </a>
             </div>
             <div class="sidebar-brand sidebar-brand-sm">
-                <a href="<?= base_url('admin') ?>">Nl</a>
+                <a href="<?= base_url('master-admin') ?>">Nl</a>
             </div>
             <ul class="sidebar-menu">
-                <li <?= $this->uri->segment(1) == 'master-admin' ? 'class="active"' : '' ?>">
+                <li <?= $active == 'master-admin' ? 'class="active"' : '' ?>">
                     <a href="<?= base_url('master-admin') ?>" class="nav-link">
                         <i class="fas fa-tachometer-alt"></i><span>Dashboard</span>
                     </a>
@@ -98,7 +98,7 @@
 
 
                 <li class="menu-header">Setting</li>
-                <li <?= $active == 'SettingAkun' ? 'class="active"' : '' ?>><a class="nav-link" href="<?= base_url('master-admin/SettingAkun') ?>"><i class="fas fa-user-cog"></i> <span>Setting Akun</span></a></li>
+                <li <?= $active == 'akun' ? 'class="active"' : '' ?>><a class="nav-link" href="<?= base_url('master-admin/SettingAkun') ?>"><i class="fas fa-user-cog"></i> <span>Setting Akun</span></a></li>
                 <li><a class="nav-link text-danger" href="<?= base_url('logout_admin') ?>"><i class="fas fa-sign-out-alt"></i> <span>Logout</span></a></li>
             </ul>
         </aside>

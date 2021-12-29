@@ -18,48 +18,41 @@
                             <table class="table table-striped" id="test">
                                 <thead class="bg-primary text-white">
                                     <tr>
+                                        <!-- <td width="5%"><input type="checkbox" id="check-all"></td> -->
                                         <td width="7%">No.</td>
                                         <td>Nama</td>
                                         <td>Email</td>
                                         <td>No. Telepon</td>
-                                        <td>Avatar</td>
+                                        <td>Foto</td>
                                         <td>Member</td>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>1</td>
-                                        <td>Akbar Imawan Dwi Cahya
-                                            <div class="table-links">
-                                                <a class="badge badge-info text-white" data-toggle="modal" data-target="#exampleModal" href="#">Lihat</a>
-                                            </div>
-                                        </td>
-                                        <td>akbarimawan18@gmail.com</td>
-                                        <td>083657874637</td>
-                                        <td>
-                                            <img alt="image" src="<?= base_url('') ?>assets/admin/img/avatar/avatar-1.png" width="80" class="rounded-circle m-2">
-                                        </td>
-                                        <td>
-                                            <button type="button" class="btn btn-primary" disabled>Belum jadi Member</button>
-                                        </td>
-                                    </tr>
+                                    <?php $no = 1;
+                                    foreach ($user as $value) { ?>
+                                        <tr>
+                                            <!-- <td><input type="checkbox" class='check-item' id="id" name="id[]"></td> -->
+                                            <td><?= $no++ ?></td>
+                                            <td><?= $value->nama ?>
+                                                <div class="table-links">
+                                                    <a class="badge badge-info text-white userModalDetail" style="cursor: pointer;" data-id="<?= $value->id_user ?>">Lihat</a>
+                                                </div>
+                                            </td>
+                                            <td><?= $value->email ?></td>
+                                            <td><?= $value->no_telp != null ? $value->no_telp : "-" ?></td>
+                                            <td>
+                                                <img alt="image" src="<?= base_url('assets/vasilissa/admin/user/' . $value->foto) ?>" width="80" class="rounded-circle m-2">
+                                            </td>
+                                            <td>
+                                                <?php if ($value->is_member == 0) { ?>
+                                                    <button type="button" disabled class="btn btn-danger">User belum menjadi member</button>
+                                                <?php } else { ?>
+                                                    <button type="button" disabled class="btn btn-info">User telah menjadi member</button>
+                                                <?php } ?>
 
-                                    <tr>
-                                        <td>2</td>
-                                        <td>M. Ali Romadoni
-                                            <div class="table-links">
-                                                <a class="badge badge-info text-white" data-toggle="modal" data-target="#exampleModal" href="#">Lihat</a>
-                                            </div>
-                                        </td>
-                                        <td>akbarimawan18@gmail.com</td>
-                                        <td>083657874637</td>
-                                        <td>
-                                            <img alt="image" src="<?= base_url('') ?>assets/admin/img/avatar/avatar-1.png" width="80" class="rounded-circle m-2">
-                                        </td>
-                                        <td>
-                                            <button type="button" class="btn btn-primary" disabled>Belum jadi Member</button>
-                                        </td>
-                                    </tr>
+                                            </td>
+                                        </tr>
+                                    <?php } ?>
                                 </tbody>
                             </table>
                         </div>
@@ -71,58 +64,58 @@
 </section>
 
 <!-- modal view -->
-<div class="modal fade" tabindex="-1" role="dialog" id="exampleModal">
+<div class="modal fade" tabindex="-1" role="dialog" id="userModalDetail">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title">Data Akbar Imawan Dwi Cahya</h5>
+                <h5 class="modal-title title-name"></h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
-                <table class="table table-striped">
-                    <tr>
-                        <td>Nama</td>
-                        <td>:</td>
-                        <td>Akbar Imawan Dwi Cahya</td>
-                    </tr>
-                    <tr>
-                        <td>Email</td>
-                        <td>:</td>
-                        <td>akbarimawan18@gmail.com</td>
-                    </tr>
-                    <tr>
-                        <td>No. Telepon</td>
-                        <td>:</td>
-                        <td>083657435687</td>
-                    </tr>
-                    <tr>
-                        <td>Alamat</td>
-                        <td>:</td>
-                        <td>
-                            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Similique maiores corrupti nobis eveniet molestias rem deleniti illo asperiores ex, quibusdam qui vitae ratione! At, hic.</p>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Status</td>
-                        <td>:</td>
-                        <td>
-                            <div class="badge badge-danger">Masih menunggu approve admin</div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Avatar</td>
-                        <td>:</td>
-                        <td>
-                            <img alt="image" src="<?= base_url('') ?>assets/admin/img/avatar/avatar-1.png" width="80" class="rounded-circle m-2">
-                        </td>
-                    </tr>
-                </table>
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                        <tr>
+                            <td>Nama</td>
+                            <td>:</td>
+                            <td id="name"></td>
+                        </tr>
+                        <tr>
+                            <td>Email</td>
+                            <td>:</td>
+                            <td id="email"></td>
+                        </tr>
+                        <tr>
+                            <td>No. Telepon</td>
+                            <td>:</td>
+                            <td id="telp"></td>
+                        </tr>
+                        <tr>
+                            <td>Tanggal Lahir</td>
+                            <td>:</td>
+                            <td id="date"> </td>
+                        </tr>
+                        <tr>
+                            <td>Alamat</td>
+                            <td>:</td>
+                            <td id="alamat"> </td>
+                        </tr>
+                        <tr>
+                            <td>Status Member</td>
+                            <td>:</td>
+                            <td id="status"></td>
+                        </tr>
+                        <tr>
+                            <td>Foto</td>
+                            <td>:</td>
+                            <td id="foto"></td>
+                        </tr>
+                    </table>
+                </div>
             </div>
             <div class="modal-footer bg-whitesmoke br">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
             </div>
         </div>
     </div>

@@ -7,7 +7,7 @@ class DataUser extends CI_Controller
     {
         parent::__construct();
         $this->load->library('template2');
-        $this->load->model('Setting_website_model');
+        $this->load->model(['Setting_website_model', 'App_model']);
     }
 
     public function index()
@@ -19,6 +19,7 @@ class DataUser extends CI_Controller
             'breadcumbs' => [
                 'Data User' => ['title' => 'Data User', 'link' => 'admin-master/DataUser'],
             ],
+            'user' => $this->App_model->get_table('user_tbl'),
             'data' => $this->Setting_website_model->getDataWebsite(),
             'icon' => $this->Setting_website_model->getDataSosmed()->result_array(),
         ];

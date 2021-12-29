@@ -59,7 +59,7 @@
                                                     <a href="<?= base_url('admin/aktif_reward/' . $values->id) ?>" class="btn btn-sm btn-danger status">NonAktif</a>
                                                 <?php } ?>
                                             </td>
-                                        </tr>1
+                                        </tr>
                                     <?php } ?>
                                 </tbody>
                             </table>

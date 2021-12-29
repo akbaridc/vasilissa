@@ -6,16 +6,16 @@
     <div class="section-body">
         <div class="row">
             <div class="col-xl-4 col-lg-4 col-sm-6 col-12">
-                <a href="<?= base_url('admin/DataUser') ?>" class="text-decoration-none text-dark">
-                    <div class="card">
+                <a href="<?= base_url('master-admin/DataUser') ?>" class="text-decoration-none text-dark">
+                    <div class="card" style="background-color: #c72e20;">
                         <div class="card-content">
                             <div class="card-body">
                                 <div class="media d-flex">
                                     <div class="align-self-center">
-                                        <i class="fas fa-user float-left" style="font-size: 50px;"></i>
+                                        <i class="fas fa-user float-left" style="font-size: 50px;color:#ffff;"></i>
                                     </div>
-                                    <div class="media-body text-right">
-                                        <h3>278</h3>
+                                    <div class="media-body text-right text-white">
+                                        <h3><?= $user ?> User</h3>
                                         <span>Total User</span>
                                     </div>
                                 </div>
@@ -26,16 +26,16 @@
             </div>
 
             <div class="col-xl-4 col-lg-4 col-sm-6 col-12">
-                <a href="<?= base_url('admin/DataMember') ?>" class="text-decoration-none text-dark">
-                    <div class="card">
+                <a href="<?= base_url('master-admin/DataMember') ?>" class="text-decoration-none text-dark">
+                    <div class="card" style="background-color: #589ae0">
                         <div class="card-content">
                             <div class="card-body">
-                                <div class="media d-flex">
+                                <div class="media d-flex text-white">
                                     <div class="align-self-center">
                                         <i class="fas fa-user-check float-left" style="font-size: 50px;"></i>
                                     </div>
                                     <div class="media-body text-right">
-                                        <h3>278</h3>
+                                        <h3><?= $member ?> Member</h3>
                                         <span>Total Member</span>
                                     </div>
                                 </div>
@@ -46,16 +46,16 @@
             </div>
 
             <div class="col-xl-4 col-lg-4 col-sm-6 col-12">
-                <a href="<?= base_url('admin/DataProduk') ?>" class="text-decoration-none text-dark">
-                    <div class="card">
+                <a href="<?= base_url('master-admin/DataProduk') ?>" class="text-decoration-none text-dark">
+                    <div class="card" style="background-color: #a8e4a0;">
                         <div class="card-content">
                             <div class="card-body">
-                                <div class="media d-flex">
+                                <div class="media d-flex text-white">
                                     <div class="align-self-center">
                                         <i class="fas fa-box-open float-left" style="font-size: 50px;"></i>
                                     </div>
                                     <div class="media-body text-right">
-                                        <h3>278</h3>
+                                        <h3><?= $produk ?> Produk</h3>
                                         <span>Total Produk</span>
                                     </div>
                                 </div>
@@ -66,16 +66,16 @@
             </div>
 
             <div class="col-xl-4 col-lg-4 col-sm-6 col-12">
-                <a href="<?= base_url('admin/DataProduk') ?>" class="text-decoration-none text-dark">
-                    <div class="card">
+                <a href="<?= base_url('master-admin/DataProduk') ?>" class="text-decoration-none text-dark">
+                    <div class="card" style="background-color: #f8b500;">
                         <div class="card-content">
                             <div class="card-body">
-                                <div class="media d-flex">
+                                <div class="media d-flex text-white">
                                     <div class="align-self-center">
                                         <i class="fas fa-people-carry float-left" style="font-size: 50px;"></i>
                                     </div>
                                     <div class="media-body text-right">
-                                        <h3>278</h3>
+                                        <h3><?= $produk_terjual ?> Terjual</h3>
                                         <span>Total Produk Terjual</span>
                                     </div>
                                 </div>
@@ -86,16 +86,16 @@
             </div>
 
             <div class="col-xl-4 col-lg-4 col-sm-6 col-12">
-                <a href="<?= base_url('admin/DataReward') ?>" class="text-decoration-none text-dark">
-                    <div class="card">
+                <a href="<?= base_url('master-admin/DataReward') ?>" class="text-decoration-none text-dark">
+                    <div class="card" style="background-color: #f4511e;">
                         <div class="card-content">
                             <div class="card-body">
-                                <div class="media d-flex">
+                                <div class="media d-flex text-white">
                                     <div class="align-self-center">
                                         <i class="fas fa-gift float-left" style="font-size: 50px;"></i>
                                     </div>
                                     <div class="media-body text-right">
-                                        <h3>278</h3>
+                                        <h3><?= $reward ?> Reward</h3>
                                         <span>Total Reward</span>
                                     </div>
                                 </div>
@@ -106,10 +106,10 @@
             </div>
 
             <div class="col-xl-6 col-md-12">
-                <div class="card">
+                <div class="card" style="background-color: #32cd32;">
                     <div class="card-content">
                         <div class="card-body cleartfix">
-                            <div class="media align-items-stretch">
+                            <div class="media align-items-stretch text-white">
                                 <div class="align-self-center">
                                     <i class="fas fa-gifts warning font-large-2 mr-2" style="font-size: 50px;"></i>
                                 </div>
@@ -127,10 +127,10 @@
             </div>
 
             <div class="col-xl-6 col-md-12">
-                <div class="card">
+                <div class="card" style="background-color: #1ab621;">
                     <div class="card-content">
                         <div class="card-body cleartfix">
-                            <div class="media align-items-stretch">
+                            <div class="media align-items-stretch text-white">
                                 <div class="align-self-center">
                                     <h1 class="mr-2">Rp. 4.450.000</h1>
                                 </div>

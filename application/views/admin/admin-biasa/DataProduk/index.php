@@ -100,7 +100,7 @@
 
 <!-- modal view -->
 <div class="modal fade" tabindex="-1" role="dialog" id="modalDetail">
-    <div class="modal-dialog" role="document">
+    <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title">Detail Produk</h5>
@@ -166,11 +166,6 @@
 
 <script>
     $(document).ready(function() {
-        $('#test').DataTable({
-            columnDefs: [{
-                sortable: false,
-                targets: [0]
-            }],
-        });
+        $('#test').DataTable();
     });
 </script>

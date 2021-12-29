@@ -56,6 +56,8 @@ class Home extends CI_Controller
             ->join("foto_produk_tbl fp", "fp.id_produk =  p.id_pd")
             ->where("p.id_pd", $id)
             ->get()->row();
+        // var_dump($produk);
+        // die;
         $data = [
             'produk' => $produk,
             'foto_produk' => $foto_produk,

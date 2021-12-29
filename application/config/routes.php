@@ -65,6 +65,7 @@ $route['master-admin'] = 'Admin/AdminMaster/Dashboard';
 $route['master-admin/DataUser'] = 'Admin/AdminMaster/DataUser';
 
 $route['master-admin/DataProduk'] = 'Admin/AdminMaster/DataProduk';
+$route['master-admin/json_produk'] = 'Admin/AdminMaster/DataProduk/json_produk';
 
 $route['master-admin/DataReward'] = 'Admin/AdminMaster/DataReward';
 
@@ -76,7 +77,9 @@ $route['master-admin/TransaksiProduk'] = 'Admin/AdminMaster/TransaksiProduk';
 
 $route['master-admin/TransaksiWithdrawReward'] = 'Admin/AdminMaster/TransaksiWithdrawReward';
 
-$route['master-admin/SettingAkun'] = 'Admin/AdminMaster/SettingAkun';
+$route['master-admin/akun'] = 'Admin/AdminMaster/SettingAkun';
+$route['master-admin/edit_akun'] = 'Admin/AdminMaster/SettingAkun/edit';
+$route['master-admin/edit_password'] = 'Admin/AdminMaster/SettingAkun/edit_password';
 //end route admin master
 
 // route untuk admin biasa

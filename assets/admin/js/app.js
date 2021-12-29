@@ -523,3 +523,30 @@ $(".rewardModalDetail").on("click", function () {
 	});
 });
 /************************************* END Data Reward ****************************************************************/
+
+/************************************* Data Produk Master Admin ****************************************************************/
+$(".modalFotoDetail").on("click", function () {
+	const id = $(this).attr("data-id");
+	$.ajax({
+		type: "post",
+		url: base_url + "master-admin/json_produk",
+		data: "id=" + id,
+		dataType: "json",
+		success: function (data) {
+			$("#modalFotoDetail").modal("show");
+			$(".foto-produkk").empty();
+			// let jenis = new Array();
+			$.each(data, function (index, value) {
+				// console.log(value);
+				$(
+					`<div class="col-md-6">
+						<img width="200" height="200" class="img-fluid m-2" src="../assets/vasilissa/admin/produk/` +
+						value.foto +
+						`">
+					</div>`
+				).appendTo(".foto-produkk");
+			});
+		},
+	});
+});
+/************************************* END Data Produk Master Admin ****************************************************************/

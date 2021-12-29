@@ -18,9 +18,9 @@
              <div class="col-lg-5">
                  <div class="portfolio-details-slider swiper">
                      <div class="swiper-wrapper align-items-center">
-                         <?php foreach ($foto_produk as $data) { ?>
+                         <?php foreach ($foto_produk as $value) { ?>
                              <div class="swiper-slide">
-                                 <img src="<?= base_url('assets/vasilissa/admin/produk/' . $data->foto) ?>" alt="">
+                                 <img src="<?= base_url('assets/vasilissa/admin/produk/' . $value->foto) ?>" alt="">
                              </div>
                          <?php } ?>
 
@@ -36,7 +36,7 @@
                         $di = $produk->diskon * $produk->harga / 100;
                         ?>
                      <div class="d-flex">
-                         <p class="text-danger" style="text-decoration: line-through;font-size:25px;font-weight:400">Rp. <?= number_format($data->harga, 0, ',', '.') ?></p>
+                         <p class="text-danger" style="text-decoration: line-through;font-size:25px;font-weight:400">Rp. <?= number_format($produk->harga, 0, ',', '.') ?></p>
                          <p class="text-gray" style="font-size:25px;font-weight:400;margin-left:10px">Rp. <?= number_format($di, 0, ',', '.') ?></p>
                      </div>
 
@@ -55,9 +55,9 @@
 
          <div class="portfolio-info col-lg-12 mt-3 row">
              <h3>Deskripsi Produk</h3>
-             <p>
+             <pre>
                  <?= $produk->deskripsi ?>
-             </p>
+             </pre>
          </div>
      </div>
  </section><!-- End Portfolio Details Section -->

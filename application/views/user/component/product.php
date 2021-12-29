@@ -26,7 +26,7 @@
                                     <!-- <a href="<?= base_url('assets/img/team/team-1.jpg') ?>" class="product-view portfokio-lightbox"><i class="bi bi-eye-fill" style="font-size: 25px;"></i></a> -->
                                 </div>
                                 <div class="product-content">
-                                    <h3 class="title"><a href="<?= base_url('produk-detail/' . $data->id) ?>"><?= $data->nama_pd ?></a></h3>
+                                    <h3 class="title"><a href="<?= base_url('produk-detail/' . $data->id_pd) ?>"><?= $data->nama_pd ?></a></h3>
                                     <div class="price">Rp. <?= number_format($data->harga, 0, ',', '.') ?>
                                         <!-- <span>Rp.1.200.0000</span>
                                         Rp. 6.900.000 -->

@@ -12,6 +12,7 @@ class DataReward extends CI_Controller
 
     public function index()
     {
+        $reward = $this->db->get_where("reward_tbl")->result();
         $data = [
             'notif' => '',
             'title' => 'Data Reward - Master Admin',
@@ -21,6 +22,7 @@ class DataReward extends CI_Controller
             ],
             'data' => $this->Setting_website_model->getDataWebsite(),
             'icon' => $this->Setting_website_model->getDataSosmed()->result_array(),
+            'reward' => $reward,
         ];
         $this->template2->views('admin/master-admin/DataReward/index', $data);
     }

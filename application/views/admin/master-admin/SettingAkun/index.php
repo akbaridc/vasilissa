@@ -4,30 +4,48 @@
         <?= $breadcumbnya; ?>
     </div>
     <div class="section-body">
-        <h2 class="section-title">Hi, Akbar Imawan Dwi Cahya</h2>
+        <h2 class="section-title">Hi, <?= $akun['nama'] ?></h2>
         <p class="section-lead">
             Ubah informasi tentang diri anda di halaman ini
         </p>
 
         <div class="row mt-sm-4">
+            <div id="flash-data" data-type="<?= isset($_SESSION['notif']['status']) ? $_SESSION['notif']['status'] : ''; ?>" data-message="<?= isset($_SESSION['notif']['title']) ? $_SESSION['notif']['title'] : ''; ?>"></div>
             <div class="col-12 col-md-12 col-lg-5">
                 <div class="card profile-widget">
                     <div class="d-flex flex-column align-items-center">
-                        <img src="<?= base_url('') ?>assets/admin/img/avatar/avatar-1.png" style="margin: -35px 0 0 0;" alt="Admin" class="rounded-circle" width="150">
+                        <?php if ($akun['foto_user'] == '') { ?>
+                            <img src="<?= base_url('') ?>assets/admin/img/avatar/avatar-1.png" style="margin: -35px 0 0 0;" alt="Admin" class="rounded-circle" width="160" height="160">
+                        <?php } else { ?>
+                            <img src="<?= base_url('') ?>assets/vasilissa/admin/akun/<?= $akun['foto_user']; ?>" style="margin: -35px 0 0 0;" alt="Admin" class="rounded-circle" width="160" height="160">
+                        <?php } ?>
                         <div class="mt-3 mb-3" style="width: 100%;">
                             <div class="container">
-                                <table class="table table-striped">
-                                    <tr>
-                                        <td>Nama</td>
-                                        <td>:</td>
-                                        <td>Akbar Imawan Dwi Cahya</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Email</td>
-                                        <td>:</td>
-                                        <td>akbarimawan18@gmail.com</td>
-                                    </tr>
-                                </table>
+                                <div class="table-responsive">
+                                    <table class="table table-striped">
+                                        <tr>
+                                            <td>Nama </td>
+                                            <td>:</td>
+                                            <td><b><?= $akun['nama']; ?><b></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Email </td>
+                                            <td>:</td>
+                                            <td><b><?= $akun['email']; ?></b></td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>Alamat </td>
+                                            <td>:</td>
+                                            <td><b><?= $akun['alamat']; ?><b></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Telepon </td>
+                                            <td>:</td>
+                                            <td><b><?= $akun['no_telp']; ?></b></td>
+                                        </tr>
+                                    </table>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -51,61 +69,55 @@
                         </ul>
                         <div class="tab-content" id="myTabContent5">
                             <div class="tab-pane fade show active" id="home5" role="tabpanel" aria-labelledby="home-tab5">
+                                <?php echo form_open_multipart(base_url() . 'master-admin/edit_akun', array('method' => 'post')); ?>
                                 <div class="row">
                                     <div class="form-group col-md-6 col-12">
-                                        <label>First Name</label>
-                                        <input type="text" class="form-control" value="Ujang" required="">
-                                        <div class="invalid-feedback">
-                                            Please fill in the first name
-                                        </div>
+                                        <label>Nama Lengkap</label>
+                                        <input type="hidden" class="form-control" name="id" value="<?= base64_encode($akun['id']); ?>" required>
+                                        <input type="text" class="form-control" name="nama" value="<?= $akun['nama']; ?>" required>
                                     </div>
                                     <div class="form-group col-md-6 col-12">
-                                        <label>Last Name</label>
-                                        <input type="text" class="form-control" value="Maman" required="">
-                                        <div class="invalid-feedback">
-                                            Please fill in the last name
-                                        </div>
+                                        <label>Email</label>
+                                        <input type="text" class="form-control" name="email" value="<?= $akun['email']; ?>" required>
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="form-group col-md-7 col-12">
-                                        <label>Email</label>
-                                        <input type="email" class="form-control" value="ujang@maman.com" required="">
-                                        <div class="invalid-feedback">
-                                            Please fill in the email
-                                        </div>
+                                    <div class="form-group col-md-6 col-12">
+                                        <label>No.Telepon</label>
+                                        <input type="text" class="form-control" name="no_telp" value="<?= $akun['no_telp']; ?>" required>
                                     </div>
-                                    <div class="form-group col-md-5 col-12">
-                                        <label>Phone</label>
-                                        <input type="tel" class="form-control" value="">
+                                    <div class="form-group col-md-6 col-12">
+                                        <label>Foto Profil</label>
+                                        <input type="file" name="foto_admin" class="form-control" id="avatar">
                                     </div>
+
                                 </div>
                                 <div class="row">
                                     <div class="form-group col-12">
-                                        <label>Avatar / Gambar</label>
-                                        <div class="custom-file">
-                                            <input type="file" name="avatar" class="custom-file-input" id="avatar">
-                                            <label class="custom-file-label">Choose File</label>
-                                        </div>
+                                        <label>Alamat Lengkap</label>
+                                        <textarea class="form-control" style="height:150px" required name="alamat"><?= $akun['alamat']; ?></textarea>
+                                    </div>
+                                    <div class="form-group col-12">
+                                        <button class="btn btn-md btn-success" type="submit">SIMPAN DATA</button>
                                     </div>
                                 </div>
+                                <?= form_close(); ?>
                             </div>
                             <div class="tab-pane fade" id="profile5" role="tabpanel" aria-labelledby="profile-tab5">
+                                <?php echo form_open(base_url() . 'master-admin/edit_password', array('method' => 'post')); ?>
                                 <div class="form-group">
                                     <label>Password baru</label>
-                                    <input type="password" class="form-control" value="*****" required="">
-                                    <div class="invalid-feedback">
-                                        Please fill in the email
-                                    </div>
+                                    <input type="hidden" class="form-control" name="id" value="<?= base64_encode($akun['id']); ?>" required>
+                                    <input type="password" class="form-control" value="" name="password1" minlength="6" placeholder="*****" required="1">
                                 </div>
 
                                 <div class="form-group">
                                     <label>Konfirmasi Password</label>
-                                    <input type="password" class="form-control" value="*****" required="">
-                                    <div class="invalid-feedback">
-                                        Please fill in the email
-                                    </div>
+                                    <input type="password" class="form-control" value="" name="password2" minlength="6" placeholder="*****" required="1">
+                                    <br>
+                                    <button class="btn btn-md btn-success" type="submit">UBAH PASSWORD</button>
                                 </div>
+                                <?= form_close(); ?>
                             </div>
                         </div>
                     </div>
