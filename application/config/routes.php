@@ -73,6 +73,9 @@ $route['master-admin/DataMember'] = 'Admin/AdminMaster/DataMember';
 $route['master-admin/DataMember/TrackingLevelMember'] = 'Admin/AdminMaster/DataMember/TrackingLevelMember';
 $route['master-admin/DataMember/UserMember'] = 'Admin/AdminMaster/DataMember/UserMember';
 
+$route['master-admin/LaporanProduk'] = 'Admin/AdminMaster/LaporanProduk';
+$route['master-admin/LaporanOmset'] = 'Admin/AdminMaster/LaporanOmset';
+
 $route['master-admin/TransaksiProduk'] = 'Admin/AdminMaster/TransaksiProduk';
 
 $route['master-admin/TransaksiWithdrawReward'] = 'Admin/AdminMaster/TransaksiWithdrawReward';

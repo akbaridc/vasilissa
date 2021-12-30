@@ -13,6 +13,10 @@ class Dashboard extends CI_Controller
     public function index()
     {
         if ($this->session->userdata('id')) {
+            $omset = $this->db->select("SUM(harga) as omset_produk")
+                ->from("member_produk_tbl")
+                ->where("status", 2)
+                ->get()->row();
             $data = [
                 'title' => 'Dashboard - Master Admin',
                 'active' => 'master-admin',
@@ -23,7 +27,10 @@ class Dashboard extends CI_Controller
                 'produk' => $this->db->get_where('produk_tbl')->num_rows(),
                 'reward' => $this->db->get_where('reward_tbl')->num_rows(),
                 'produk_terjual' => $this->db->get_where('member_produk_tbl', ['status' => 2])->num_rows(),
+                'omset' => $omset,
             ];
+            // var_dump($data['omset']);
+            // die;
             $this->template2->views('admin/master-admin/dashboard', $data);
         } else {
             redirect('login/pihak');

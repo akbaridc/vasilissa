@@ -91,6 +91,17 @@
                     </ul>
                 </li>
 
+                <li class="menu-header">Laporan</li>
+                <li <?php if ($active == 'LaporanProduk' || $active == 'LaporanOmset') {
+                        echo 'class="nav-item dropdown active"';
+                    } ?>>
+                    <a href="#" class="nav-link has-dropdown"><i class="fas fa-file"></i> <span>Laporan</span></a>
+                    <ul class="dropdown-menu">
+                        <li <?= $active == 'LaporanProduk' ? 'class="active"' : '' ?>><a class="nav-link" href="<?= base_url('master-admin/LaporanProduk') ?>"><i class="fas fa-box"></i> <span>Laporan Produk</span></a></li>
+                        <li <?= $active == 'LaporanOmset' ? 'class="active"' : '' ?>><a class="nav-link" href="<?= base_url('master-admin/LaporanOmset') ?>"><i class="fas fa-donate"></i> <span>Laporan Omset</span></a></li>
+                    </ul>
+                </li>
+
                 <li class="menu-header">Transaksi</li>
                 <li <?= $this->uri->segment(2) == 'TransaksiProduk' ? 'class="active"' : '' ?>><a class="nav-link" href="<?= base_url('master-admin/TransaksiProduk') ?>"><i class="fas fa-boxes"></i> <span>Transaksi Produk</span></a></li>
                 <!-- <li <?= $this->uri->segment(2) == 'TransaksiWithdrawCash' ? 'class="active"' : '' ?>><a class="nav-link" href="<?= base_url('master-admin/TransaksiWithdrawCash') ?>"><i class="fas fa-money-bill-wave"></i> <span>Transaksi Withdraw Cash</span></a></li> -->

@@ -85,28 +85,29 @@
                 </a>
             </div>
 
-            <div class="col-xl-4 col-lg-4 col-sm-6 col-12">
-                <a href="<?= base_url('master-admin/DataReward') ?>" class="text-decoration-none text-dark">
-                    <div class="card" style="background-color: #f4511e;">
-                        <div class="card-content">
-                            <div class="card-body">
-                                <div class="media d-flex text-white">
-                                    <div class="align-self-center">
-                                        <i class="fas fa-gift float-left" style="font-size: 50px;"></i>
-                                    </div>
-                                    <div class="media-body text-right">
-                                        <h3><?= $reward ?> Reward</h3>
-                                        <span>Total Reward</span>
-                                    </div>
+            <div class="col-xl-8 col-lg-8 col-sm-6 col-12">
+                <div class="card" style="background-color: #1ab621;">
+                    <div class="card-content">
+                        <div class="card-body cleartfix">
+                            <div class="media d-flex text-white">
+                                <div class="float-left" style="margin-right: auto;">
+                                    <h1>Rp. <?= number_format($omset->omset_produk, 0, ',', '.') ?></h1>
+                                </div>
+                                <div class="mr-2" style="margin-left: auto;">
+                                    <h4>Omset</h4>
+                                    <span>Omset dari penjualan produk paket & item</span>
+                                </div>
+                                <div>
+                                    <i class="fas fa-donate success font-large-2" style="font-size: 50px;"></i>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </a>
+                </div>
             </div>
 
-            <div class="col-xl-6 col-md-12">
-                <div class="card" style="background-color: #32cd32;">
+            <div class="col-xl-5 col-md-12">
+                <div class="card" style="background-color: #690000;">
                     <div class="card-content">
                         <div class="card-body cleartfix">
                             <div class="media align-items-stretch text-white">
@@ -126,20 +127,20 @@
                 </div>
             </div>
 
-            <div class="col-xl-6 col-md-12">
-                <div class="card" style="background-color: #1ab621;">
+            <div class="col-xl-7 col-md-12">
+                <div class="card" style="background-color: #00ff0b;">
                     <div class="card-content">
                         <div class="card-body cleartfix">
-                            <div class="media align-items-stretch text-white">
-                                <div class="align-self-center">
+                            <div class="media d-flex text-white">
+                                <div class="align-self-center" style="margin-right: auto;">
                                     <h1 class="mr-2">Rp. 4.450.000</h1>
                                 </div>
-                                <div class="media-body">
+                                <div class="mr-2" style="margin-left: auto;">
                                     <h4>Total Cash</h4>
                                     <span>Pengeluaran Bonus cash</span>
                                 </div>
-                                <div class="align-self-center">
-                                    <i class="fas fa-donate success font-large-2" style="font-size: 50px;"></i>
+                                <div>
+                                    <i class="fas fa-money-bill-wave-alt success font-large-2" style="font-size: 50px;"></i>
                                 </div>
                             </div>
                         </div>
